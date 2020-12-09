@@ -1,5 +1,5 @@
-
 import './App.css';
+import Forms from './components/Forms';
 
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         TODO-APP
       </header>
+      <Forms />
     </div>
   );
 }
