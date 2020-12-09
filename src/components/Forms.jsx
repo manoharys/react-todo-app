@@ -1,6 +1,6 @@
 import React from "react";
 
-const Forms = ({ inputText, setInputText, todos, setTodos }) => {
+const Forms = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   const inputHandler = (e) => {
     setInputText(e.target.value);
   };
@@ -15,10 +15,16 @@ const Forms = ({ inputText, setInputText, todos, setTodos }) => {
         id: Math.floor(Math.random() * 1000) + 1,
       },
     ]);
-
     //clearing the inputField when the is button clicked
     setInputText("");
   };
+
+  //selectHandler
+
+  const selectHandler = (e)=>{
+      //console.log(e.target.value)
+      setStatus(e.target.value)     
+}
 
   return (
     <form>
@@ -32,7 +38,7 @@ const Forms = ({ inputText, setInputText, todos, setTodos }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo">
+        <select onClick={selectHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
