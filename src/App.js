@@ -12,14 +12,14 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">TODO-APP {inputText}</header>
+      <header className="App-header">TODO-APP</header>
       <Forms
         inputText={inputText}
         setInputText={setInputText}
         todos={todos}
         setTodos={setTodos}
       />
-      <TodoList />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
